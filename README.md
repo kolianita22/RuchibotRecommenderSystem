@@ -36,8 +36,12 @@ RuchiBot is an **intelligent recipe recommendation system** that helps users dis
 
 ---
 **UI  Screenshots**
-### 🏠 Homepage
-<img src="" alt="Homepage" width="600">
+### HomePAge
+<img src="assests/UI_Img.png" alt="Homepage" width="600">
+
+### Chat interface
+<img src="assests/chat.png" alt="Chat" width="600">
+
 
 ## Installation & Setup
 
