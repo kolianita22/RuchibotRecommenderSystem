@@ -19,9 +19,9 @@ nltk.download('wordnet')
 
 
 # Load saved model and data
-tfidf = joblib.load("tfvector.pkl")
-tfidf_matrix = joblib.load("matrix.pkl")
-recipes = pd.read_csv("maharashtrian_recipes.csv")
+tfidf = joblib.load("vectorizer.pkl")
+tfidf_matrix = joblib.load("tfidf_matrix.pkl")
+recipes = pd.read_csv("cleaned_reciped.csv")
 
 # Create Flask app
 app = Flask(__name__)
@@ -50,7 +50,7 @@ def preprocess_text(text):
     # Join back into a single string
     return " ".join(tokens)
 
-recipes = pd.read_csv("maharashtrian_recipes.csv")
+recipes = pd.read_csv("cleaned_reciped.csv")
 recipes.dropna(subset=['ingredients', 'instructions'], inplace=True)
 recipes['clean_ingredients'] = recipes['ingredients'].apply(preprocess_text)
 recipes['clean_instructions'] = recipes['instructions'].apply(preprocess_text)
