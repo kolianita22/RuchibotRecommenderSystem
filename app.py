@@ -10,10 +10,13 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
 
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-
+import nltk
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
 
 # Load saved model and data
 tfidf = joblib.load("vectorizer.pkl")
